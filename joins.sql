@@ -30,3 +30,9 @@ select users.id, users.name, todos.title  from users inner join todos on users.i
 
 -- Este es un inner join y no importa cual es cual
 select users.id, users.name, todos.title  from users inner join todos on users.id = todos.user_id where users.id = '26f22f51-90a9-4f59-9b1a-93f145815caf';
+
+
+create view view_users_todos as select users.id as user_id  ,users.name as user_name, todos.title  from users left join todos on users.id = todos.user_id ;
+
+select * from view_users_todos where user_name = 'Sahid';
+
